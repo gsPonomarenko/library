@@ -11,7 +11,7 @@ namespace library
     static void Main(string[] args)
     {
       /* Initializing Library Controller */
-      LibraryController LibControl = new LibraryController();
+      LibraryController LibControl = new LibraryController(args[0]);
       
       /* Runninng Controller */
       LibControl.Run();

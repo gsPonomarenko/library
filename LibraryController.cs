@@ -13,10 +13,23 @@ namespace library
     private string Msg; //String for messages
 
     /* Default constructor */
-    public LibraryController()
+    public LibraryController(string Source)
     {
+      /* Change input */
       View = new LibraryView();
-      Model = new LibraryModel();
+      if (Source == "sql")
+      {
+        Model = new LibraryModel(new SQLLibSource());
+      }
+      else if (Source == "txt") 
+      {
+        Model = new LibraryModel(new TXTLibSource());
+      } 
+      else if (Source == "db") 
+      {
+        Model = new LibraryModel(new DBLibSource());
+      }
+      
     }
 
     /* Main Controller function */

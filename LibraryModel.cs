@@ -13,10 +13,10 @@ namespace library
     private List<Visitor> LibVisitors; //List of visitors in library
     
     /* Default constructor */
-    public LibraryModel()
+    public LibraryModel(IDataBase DataBase)
     {
-      LibBooks = new List<Book>();
-      LibVisitors = new List<Visitor>();
+      LibBooks = DataBase.GetListOfBooks();
+      LibVisitors = DataBase.GetListOfVisitors();
     }
 
     /* Adding book to book's list function */
